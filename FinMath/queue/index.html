@@ -148,27 +148,24 @@
             <div class="section">
               
                 <h2 id="single-server-queue">Single Server Queue</h2>
-<p>令<script type="math/tex">\lambda</script>为客户平均到达速率，<script type="math/tex">W</script>为平均处理时间，<script type="math/tex">L</script>为系统中处理的客户平均数量，则
-<script type="math/tex">L = \lambda W</script>
-</p>
-<p><strong>Utilization Level</strong>：令<script type="math/tex">\lambda</script>为客户平均到达速率，<script type="math/tex">\bar{x}</script>为每个客户服务
-平均处理时间，则<script type="math/tex">\rho = \lambda \bar{x}</script>为utilization level。<script type="math/tex">\rho</script>
-表示工作站繁忙的时间比例，<script type="math/tex">1-\rho</script>表示工作站空闲的时间比例。</p>
+<p>令<span>\(\lambda\)</span>为客户平均到达速率，<span>\(W\)</span>为平均处理时间，<span>\(L\)</span>为系统中处理的客户平均数量，则
+<span>\(L = \lambda W\)</span></p>
+<p><strong>Utilization Level</strong>：令<span>\(\lambda\)</span>为客户平均到达速率，<span>\(\bar{x}\)</span>为每个客户服务
+平均处理时间，则<span>\(\rho = \lambda \bar{x}\)</span>为utilization level。<span>\(\rho\)</span>
+表示工作站繁忙的时间比例，<span>\(1-\rho\)</span>表示工作站空闲的时间比例。</p>
 <p><strong>Residual Waiting Time</strong>：表示当前工作站需要处理当前客户的平均时间
-<script type="math/tex; mode=display">
+$$
 (1-\rho)0+\rho \frac{\bar{x^2}}{2 \bar{x}} = \lambda \frac{\bar{x^2}}{2}
-</script>
-</p>
+$$</p>
 <p><strong>VIrtual Waiting Time</strong>：表示等待队列处理完所有请求的时间，等于当前客户的
-residual waiting time再加上处理剩余客户的时间，令<script type="math/tex">\bar{r}=\frac{\bar{x^2}}{2 \bar{x}}</script>
-<script type="math/tex; mode=display">
+residual waiting time再加上处理剩余客户的时间，令<span>\(\bar{r}=\frac{\bar{x^2}}{2 \bar{x}}\)</span>
+$$
 \begin{aligned}
-V_q &= L_q \bar{x} + \frac{\lambda \bar{x^2}}{2}\\ 
- &= \lambda W_q \bar{x}+\frac{\lambda \bar{x^2}}{2} \\ 
- &= \rho(W_q+\bar{r})
+V_q &amp;= L_q \bar{x} + \frac{\lambda \bar{x^2}}{2}\ 
+ &amp;= \lambda W_q \bar{x}+\frac{\lambda \bar{x^2}}{2} \ 
+ &amp;= \rho(W_q+\bar{r})
 \end{aligned}
-</script>
-</p>
+$$</p>
               
             </div>
           </div>
@@ -213,6 +210,7 @@ V_q &= L_q \bar{x} + \frac{\lambda \bar{x^2}}{2}\\
     </span>
 </div>
     <script src="../../js/theme.js"></script>
+      <script src="../../mathjax-config.js"></script>
       <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>

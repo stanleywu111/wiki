@@ -165,103 +165,74 @@
             <div class="section">
               
                 <h2 id="_1">指数分布</h2>
-<p>
-<script type="math/tex; mode=display">f(x)=\lambda e^{-\lambda x}</script>
-</p>
-<p>
-<script type="math/tex; mode=display">
+<span>\[f(x)=\lambda e^{-\lambda x}\]</span><span>\[
 F(x)=P(X \leq x) = 1-e^{-\lambda x}
-</script>
-</p>
-<p>
-<script type="math/tex; mode=display">
+\]</span><span>\[
 \bar{F}(x) = P(X \geq x) = e^{-\lambda x}
-</script>
-</p>
-<p><img alt="exp dist" src="../../img/dis.PNG" /></p>
+\]</span><p><img alt="exp dist" src="../../img/dis.PNG" /></p>
 <h3 id="1hazard-function">无记忆性1(Hazard Function)</h3>
-<p>
-<script type="math/tex; mode=display">
+<p>$$
 h(x)=\frac{f(x)}{\bar{F}(x)}=\lambda
-</script>
-<script type="math/tex">h(x) \Delta x</script>表示在接下来<script type="math/tex">\Delta x</script>时间内对象消失的概率，所以<script type="math/tex">h(x)</script>表示对象
-在接下来单位时间内消失的概率，由上式可知为常数<script type="math/tex">\lambda</script>
-</p>
+$$
+<span>\(h(x) \Delta x\)</span>表示在接下来<span>\(\Delta x\)</span>时间内对象消失的概率，所以<span>\(h(x)\)</span>表示对象
+在接下来单位时间内消失的概率，由上式可知为常数<span>\(\lambda\)</span></p>
 <h3 id="2">无记忆性2</h3>
-<p>
-<script type="math/tex; mode=display">
+<span>\[
 \begin{aligned}
-P(X \geq x+y |X \geq y) &= \frac{P(X \geq x+y)}{P(X \geq y)}\\ 
- &=\frac{e^{-\lambda (x+y)}}{e^{-\lambda y}} \\ 
- &=e^{-\lambda x} \\ 
- &=P(X \geq x)
+P(X \geq x+y |X \geq y) &amp;= \frac{P(X \geq x+y)}{P(X \geq y)}\\ 
+ &amp;=\frac{e^{-\lambda (x+y)}}{e^{-\lambda y}} \\ 
+ &amp;=e^{-\lambda x} \\ 
+ &amp;=P(X \geq x)
 \end{aligned}
-</script>
-</p>
-<h3 id="3">无记忆性3？？</h3>
-<p>
-<script type="math/tex; mode=display">
+\]</span><h3 id="3">无记忆性3？？</h3>
+<span>\[
 \frac{f(x)}{\bar{F}(y)} = f(x-y)
-</script>
-</p>
-<h3 id="_2">最小指数分布</h3>
-<p>假设<script type="math/tex">X</script>和<script type="math/tex">Y</script>是独立的指数分布，令<script type="math/tex">Z=\min\left \{ X,Y \right \}</script>，
-且定义变量<script type="math/tex">I</script>，<script type="math/tex">I=0</script>如果<script type="math/tex">X \leq Y</script>，<script type="math/tex">I=1</script>如果<script type="math/tex">X > Y</script>，则</p>
+\]</span><h3 id="_2">最小指数分布</h3>
+<p>假设<span>\(X\)</span>和<span>\(Y\)</span>是独立的指数分布，令<span>\(Z=\min\left \{ X,Y \right \}\)</span>，
+且定义变量<span>\(I\)</span>，<span>\(I=0\)</span>如果<span>\(X \leq Y\)</span>，<span>\(I=1\)</span>如果<span>\(X &gt; Y\)</span>，则</p>
 <ol>
-<li>
-<script type="math/tex">f(z) =  (\lambda+\mu)e^{-(\lambda+\mu)z}</script>
-</li>
-<li>
-<script type="math/tex">P(I=0)=\frac{\lambda }{\lambda +\mu}=1-P(I=1)</script>
-</li>
+<li><span>\(f(z) =  (\lambda+\mu)e^{-(\lambda+\mu)z}\)</span></li>
+<li><span>\(P(I=0)=\frac{\lambda }{\lambda +\mu}=1-P(I=1)\)</span></li>
 </ol>
 <h2 id="erlang">Erlang分布</h2>
-<p>
-<script type="math/tex">X_i</script>为独立指数分布，则<script type="math/tex">\sum_{i=1}^n X_i</script>称为Erlang分布：
-<script type="math/tex; mode=display">
+<p><span>\(X_i\)</span>为独立指数分布，则<span>\(\sum_{i=1}^n X_i\)</span>称为Erlang分布：
+$$
 f_{\sum_{i=1}^n X_i}(x)=\frac{\lambda (\lambda x)^{n-1} e^{-\lambda x}}{(n-1)!}
-</script>
-</p>
-<p>
-<script type="math/tex; mode=display">
+$$</p>
+<span>\[
 \bar{F}_{\sum_{i=1}^n X_i}(x)=P(\sum_{i=1}^n X_i \geq x)=\sum_{k=0}^{n-1} e^{-\lambda x}\frac{(\lambda x)^k}{k!}
-</script>
-</p>
-<h2 id="_3">超指数分布</h2>
-<p>如果对于一个随机变量<script type="math/tex">X</script>，服从参数为<script type="math/tex">\lambda_i</script>的指数分布的概率为<script type="math/tex">p_i</script>，则
+\]</span><h2 id="_3">超指数分布</h2>
+<p>如果对于一个随机变量<span>\(X\)</span>，服从参数为<span>\(\lambda_i\)</span>的指数分布的概率为<span>\(p_i\)</span>，则
 称为超指数分布：
- <script type="math/tex; mode=display">
+ $$
    f(x) = \sum_n p_n \lambda_n e^{-\lambda_n x}
- </script>
-</p>
+ $$</p>
 <h2 id="_4">泊松分布</h2>
-<p>假设有一堆对象符合指数分布，则在时间<script type="math/tex">[0,x]</script>内到达的对象个数为<script type="math/tex">N(x)</script>
-<script type="math/tex; mode=display">
+<p>假设有一堆对象符合指数分布，则在时间<span>\([0,x]\)</span>内到达的对象个数为<span>\(N(x)\)</span>
+$$
 \begin{aligned}
-P(N(x)=n) &= P(N(x) < n+1) - P(N(x) < n)\\ 
- &= P(\sum_{i=1}^{n+1} X_i >x) - P(\sum_{i=1}^{n} X_i >x)\\ 
- &= e^{-\lambda x} \frac{(\lambda x)^n}{n!}
+P(N(x)=n) &amp;= P(N(x) &lt; n+1) - P(N(x) &lt; n)\ 
+ &amp;= P(\sum_{i=1}^{n+1} X_i &gt;x) - P(\sum_{i=1}^{n} X_i &gt;x)\ 
+ &amp;= e^{-\lambda x} \frac{(\lambda x)^n}{n!}
 \end{aligned}
-</script>
-以上<script type="math/tex">N(x)</script>为泊松分布</p>
-<p>令<script type="math/tex">X</script>以指定顺序<script type="math/tex">Y_1 \leq Y_2 \leq \cdots \leq Y_N</script>到达，则
-<script type="math/tex; mode=display">
+$$
+以上<span>\(N(x)\)</span>为泊松分布</p>
+<p>令<span>\(X\)</span>以指定顺序<span>\(Y_1 \leq Y_2 \leq \cdots \leq Y_N\)</span>到达，则
+$$
 f_{Y_1,\cdots,Y_N|N(x)=n}(y_1,y_2,\cdots,y_n) = \frac{n!}{x^n}
-</script>
+$$
 若不指定到达顺序，则
-<script type="math/tex; mode=display">
+$$
 f_{X_1,\cdots,X_N}(x_1,x_2,\cdots,x_n) = \frac{1}{x^n}
-</script>
-</p>
+$$</p>
 <p>泊松过程Thinning
-<script type="math/tex; mode=display">
+$$
 \lambda p
-</script>
+$$
 泊松过程superpositioning
-<script type="math/tex; mode=display">
+$$
 \lambda + \mu
-</script>
-</p>
+$$</p>
               
             </div>
           </div>
@@ -306,6 +277,7 @@ f_{X_1,\cdots,X_N}(x_1,x_2,\cdots,x_n) = \frac{1}{x^n}
     </span>
 </div>
     <script src="../../js/theme.js"></script>
+      <script src="../../mathjax-config.js"></script>
       <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>
