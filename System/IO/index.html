@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>IO系统编程 - 学习笔记</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "IO\u7cfb\u7edf\u7f16\u7a0b";
+    var mkdocs_page_input_path = "System\\IO.md";
+    var mkdocs_page_url = "/System/IO/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> 学习笔记</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>系统编程</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">IO系统编程</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#io">IO的数据结构</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_1">原子操作</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_2">文件锁</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>金融数学</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FinMath/dist/">概率分布</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FinMath/renewal/">更新过程</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../FinMath/queue/">排队论</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/">关于</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">学习笔记</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>系统编程 &raquo;</li>
+        
+      
+    
+    <li>IO系统编程</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="io">IO的数据结构</h2>
+<p>一个打开的文件在内核中使用三种数据结构表示</p>
+<ul>
+<li>文件描述符表<ul>
+<li>文件描述符标志</li>
+<li>文件表项指针</li>
+</ul>
+</li>
+<li>文件表项<ul>
+<li>文件状态标志：读，写，追加，同步和非阻塞等状态标志</li>
+<li>当前文件偏移量</li>
+<li>i节点表项指针</li>
+</ul>
+</li>
+<li>i节点<ul>
+<li>文件类型和对该文件的操作函数指针</li>
+<li>当前文件长度</li>
+<li>文件所有者</li>
+<li>文件所在的设备，文件访问权限</li>
+<li>指向文件数据在磁盘块上所在位置的指针等</li>
+</ul>
+</li>
+</ul>
+<h2 id="_1">原子操作</h2>
+<h2 id="_2">文件锁</h2>
+<p>当多个用户共同使用，操作一个文件的时间，通常采用的方法是给文件上锁，来避免共享资源
+才是竞争的状态。文件锁按功能分为：</p>
+<ul>
+<li>共享读锁<ul>
+<li>文件描述符必须读打开</li>
+<li>一个进程上了读锁，其他进程也可以上读锁进行读取</li>
+</ul>
+</li>
+<li>独占写锁<ul>
+<li>文件描述符必须打开</li>
+<li>一个进程上了写锁，其他进程就不能上锁和读锁进行读写操作</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../FinMath/dist/" class="btn btn-neutral float-right" title="概率分布">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../FinMath/dist/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+      <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</body>
+</html>
