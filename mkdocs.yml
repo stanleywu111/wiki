@@ -1,0 +1,20 @@
+site_name: 学习笔记
+
+theme: 'readthedocs'
+pages:
+    - index.md
+    - '系统编程':
+        - 'IO系统编程': 'System/IO.md'
+    - '金融数学':
+        - '概率分布': 'FinMath/dist.md'
+        - '更新过程': 'FinMath/renewal.md'
+        - '排队论': 'FinMath/queue.md'
+    - '关于': about.md
+
+extra_javascript: 
+    - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+    - extra
+    - mdx_math:
+        enable_dollar_delimiter: True
