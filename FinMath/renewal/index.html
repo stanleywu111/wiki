@@ -148,22 +148,26 @@
             <div class="section">
               
                 <h2 id="_1">更新过程</h2>
-<p>令<span>\(X_i\)</span>为一系列的独立同分布，令<span>\(S_n=\sum_{i=1}^n X_i\)</span>，则定义更新过程为：
-$$
-N(t)=sup\left { n \geq 0|S_n \leq t \right }
-$$</p>
+<p>令<script type="math/tex">X_i</script>为一系列的独立同分布，令<script type="math/tex">S_n=\sum_{i=1}^n X_i</script>，则定义更新过程为：
+<script type="math/tex; mode=display">
+N(t)=sup\left \{ n \geq 0|S_n \leq t \right \}
+</script>
+</p>
 <p>Age Process：
-$$
+<script type="math/tex; mode=display">
 A(t)=t-S_{N(t)}
-$$</p>
+</script>
+</p>
 <p>Residual Process:
-$$
+<script type="math/tex; mode=display">
 R(t)=S_{N(t)+1} - t
-$$</p>
+</script>
+</p>
 <p>Length Process:
-$$
+<script type="math/tex; mode=display">
 L(t)=A(t)+R(t)=S_{N(t)+1}-S_{N(t)}=X_{N(t)+1}
-$$</p>
+</script>
+</p>
 <p><img alt="renwal" src="../../img/renewal.png" /></p>
               
             </div>
@@ -209,7 +213,6 @@ $$</p>
     </span>
 </div>
     <script src="../../js/theme.js"></script>
-      <script src="../../mathjax-config.js"></script>
       <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>
