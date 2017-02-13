@@ -1,6 +1,6 @@
 site_name: 学习笔记
 
-theme: 'readthedocs'
+theme: alabaster
 pages:
     - index.md
     - '系统编程':
