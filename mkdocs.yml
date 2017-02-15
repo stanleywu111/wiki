@@ -5,10 +5,19 @@ pages:
     - index.md
     - '系统编程':
         - 'IO系统编程': 'System/IO.md'
+    - '编程语言':
+        - 'C++': 'ProgLag/CPP.md'
+        - 'Python': 'ProgLag/Python.md'
+        - 'C#': 'ProgLag/C#.md'
     - '金融数学':
-        - '概率分布': 'FinMath/dist.md'
-        - '更新过程': 'FinMath/renewal.md'
-        - '排队论': 'FinMath/queue.md'
+        - '概率论':
+            - '概率分布': 'FinMath/dist.md'
+            - '更新过程': 'FinMath/renewal.md'
+            - '排队论': 'FinMath/queue.md'
+        - '衍生品数学':
+            - '随机积分': FinMath/stocal.md
+            - '期权定价': FinMath/option.md
+            - '随机波动率': FinMath/stoval.md
     - '关于': about.md
 
 extra_javascript: 
