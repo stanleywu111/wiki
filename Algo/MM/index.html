@@ -15,7 +15,7 @@
     
     
       
-        <title>C# - 学习笔记</title>
+        <title>做市 - 学习笔记</title>
       
     
     
@@ -71,15 +71,11 @@
             
               
                 <span class="md-header-nav__parent">
-                  编程语言
-                </span>
-              
-                <span class="md-header-nav__parent">
-                  C#
+                  交易策略
                 </span>
               
             
-            C#
+            做市
           
         </span>
       </div>
@@ -328,7 +324,7 @@
       
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       交易策略
@@ -344,7 +340,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../../Algo/LOB/" title="订单簿" class="md-nav__link">
+      <a href="../LOB/" title="订单簿" class="md-nav__link">
         订单簿
       </a>
     
@@ -355,9 +351,23 @@
           
   <li class="md-nav__item">
     
-      <a href="../../Algo/MM/" title="做市" class="md-nav__link">
-        做市
-      </a>
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="做市" class="md-nav__link md-nav__link--active">
+      做市
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
     
   </li>
 
@@ -366,7 +376,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../../Algo/FactorModel/" title="因子模型" class="md-nav__link">
+      <a href="../FactorModel/" title="因子模型" class="md-nav__link">
         因子模型
       </a>
     
@@ -377,7 +387,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../../Algo/StatArb/" title="统计套利" class="md-nav__link">
+      <a href="../StatArb/" title="统计套利" class="md-nav__link">
         统计套利
       </a>
     
@@ -388,7 +398,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../../Algo/Algo/" title="算法交易" class="md-nav__link">
+      <a href="../Algo/" title="算法交易" class="md-nav__link">
         算法交易
       </a>
     
@@ -404,7 +414,7 @@
       
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       编程语言
@@ -436,7 +446,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../CPP/" title="C++" class="md-nav__link">
+      <a href="../../ProgLag/CPP/" title="C++" class="md-nav__link">
         C++
       </a>
     
@@ -468,7 +478,7 @@
           
   <li class="md-nav__item">
     
-      <a href="../Python/" title="Python" class="md-nav__link">
+      <a href="../../ProgLag/Python/" title="Python" class="md-nav__link">
         Python
       </a>
     
@@ -484,7 +494,7 @@
           
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
     
     <label class="md-nav__link" for="nav-4-3">
       C#
@@ -500,19 +510,9 @@
           
   <li class="md-nav__item">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-    <a href="./" title="C#" class="md-nav__link md-nav__link--active">
-      C#
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-</nav>
+      <a href="../../ProgLag/C%23/" title="C#" class="md-nav__link">
+        C#
+      </a>
     
   </li>
 
@@ -595,6 +595,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
 </nav>
                   </div>
@@ -607,9 +609,20 @@
                
               
                 
-                  <h1>C#</h1>
-                
-                <p>C#</p>
+                <h1 id="dealing-with-the-inventory-risk">Dealing with the Inventory Risk</h1>
+<p>假设订单到达符合泊松点过程，bid和ask两边分别为<script type="math/tex">N_b</script>和<script type="math/tex">N_a</script>，
+则做市商的的存货为
+<script type="math/tex; mode=display">q_t = N_t^b - N_t^a </script>
+做市商报价为<script type="math/tex">S_t^b</script>和<script type="math/tex">S_t^a</script>，因为订单簿的到达过程和距离中间价的
+距离有关，即<script type="math/tex">\delta_t^b = S_t - S_t^b</script>，<script type="math/tex">\delta_t^a = S_t^a - S_t</script>。
+则点过程的参数<script type="math/tex">\lambda</script>为：
+<script type="math/tex; mode=display">\lambda^b(\delta^b) = A e^{-k \delta^b}</script>
+<script type="math/tex; mode=display">\lambda^a(\delta^a) = A e^{-k \delta^a}</script>
+令供应商现金为<script type="math/tex">X</script>，则
+<script type="math/tex; mode=display">dX_t = (S_t + \delta_t^a)dN_t^a - (S_t-\delta_t^b)dN_t^b</script>
+令做市商满足CARA效用函数，则做市商优化问题为：
+<script type="math/tex; mode=display">\sup E[-\exp(-\gamma(X_T+q_TS_T))]</script>
+</p>
               
             </article>
           </div>
@@ -622,7 +635,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Python/" title="Python" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../LOB/" title="订单簿" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -631,19 +644,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Python
+                订单簿
               </span>
             </div>
           </a>
         
         
-          <a href="../../System/IO/" title="IO系统编程" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../FactorModel/" title="因子模型" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                IO系统编程
+                因子模型
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -4,54 +4,100 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-02-16</lastmod>
+     <lastmod>2017-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+        
+    <url>
+     <loc></loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc></loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc></loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/Algo/LOB/</loc>
+     <lastmod>2017-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Algo/MM/</loc>
+     <lastmod>2017-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Algo/FactorModel/</loc>
+     <lastmod>2017-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Algo/StatArb/</loc>
+     <lastmod>2017-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Algo/Algo/</loc>
+     <lastmod>2017-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc></loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc></loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc></loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
         
     <url>
      <loc>/System/IO/</loc>
-     <lastmod>2017-02-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/ProgLag/CPP/</loc>
-     <lastmod>2017-02-16</lastmod>
+     <lastmod>2017-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/ProgLag/Python/</loc>
-     <lastmod>2017-02-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/ProgLag/C#/</loc>
-     <lastmod>2017-02-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc></loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc></loc>
-     <lastmod></lastmod>
+     <loc>/System/Process/</loc>
+     <lastmod>2017-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -60,7 +106,7 @@
     
     <url>
      <loc>/about/</loc>
-     <lastmod>2017-02-16</lastmod>
+     <lastmod>2017-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
