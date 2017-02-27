@@ -1,1 +1,10 @@
-C++
+为什么在类中使用指针成员函数？  
+The advantages of using a pointer are outlined by 3DH: lazy initialization, reduction in header dependencies, and control over the lifetime of the object.
+
+The are also disadvantages. When you have a pointer data member, you probably have to write your own copy constructor and assignment operator, to make sure that a copy of the object is created properly. Of course, you also must remember to delete the object in the destructor. Also, if you add a pointer data member to an existing class, you must remember to update the copy constructor and operator=. In short, having a pointer data member is more work for you.
+
+Another disadvantage is really the flip side of the control over the lifetime of the object pointed to by the pointer. Non-pointer data members are destroyed automagically when the object is destroyed, meaning that you can always be sure that they exist as long as the object exists. With the pointer, you have to check for it being NULL, meaning also that you have to make sure to set it to NULL whenever it doesn't point to anything. Having to deal with all this may easily lead to bugs.
+
+Finally, accessing non-pointer members is likely to be faster, because they are contiguous in memory. On the other hand, accessing pointer data member pointing to an object allocated on the heap is likely to cause a cache miss, making it slower.
+
+There is no single answer to your question. You have to look at your design, and decide whether the advantages of pointer data members outweigh the additional headache. If reducing compile time and header dependencies is important, use the pimpl idiom. If your data member may not be necessary for your object in certain cases, use a pointer, and allocate it when needed. If these do not sound like compelling reasons, and you do not want to do extra work, then do not use a pointer.

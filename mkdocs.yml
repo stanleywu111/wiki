@@ -1,14 +1,8 @@
 site_name: 学习笔记
 
-theme: alabaster
+theme: material
 pages:
     - index.md
-    - '系统编程':
-        - 'IO系统编程': 'System/IO.md'
-    - '编程语言':
-        - 'C++': 'ProgLag/CPP.md'
-        - 'Python': 'ProgLag/Python.md'
-        - 'C#': 'ProgLag/C#.md'
     - '金融数学':
         - '概率论':
             - '概率分布': 'FinMath/dist.md'
@@ -18,6 +12,28 @@ pages:
             - '随机积分': FinMath/stocal.md
             - '期权定价': FinMath/option.md
             - '随机波动率': FinMath/stoval.md
+        - '优化':
+            - '线性优化': FinMath/linopt.md
+            - '凸优化': FinMath/cvxopt.md
+            - '随机控制': FinMath/stocon.md
+    - '交易策略':
+        - '订单簿': Algo/LOB.md
+        - '做市': Algo/MM.md
+        - '因子模型': Algo/FactorModel.md
+        - '统计套利': Algo/StatArb.md
+        - '算法交易': Algo/Algo.md
+    - '编程语言':
+        - 'C++':
+            - 'C++': 'ProgLag/CPP.md'
+        - 'Python':
+            - 'Python': 'ProgLag/Python.md'
+        - 'C#': 
+            - 'C#': 'ProgLag/C#.md'
+    - '系统编程':
+        - 'IO系统编程': 'System/IO.md'
+        - '进程': 'System/Process.md'
+
+
     - '关于': about.md
 
 extra_javascript: 
@@ -25,5 +41,7 @@ extra_javascript:
 
 markdown_extensions:
     - extra
+    - pymdownx.tasklist:
+        custom_checkbox: true
     - mdx_math:
         enable_dollar_delimiter: True
