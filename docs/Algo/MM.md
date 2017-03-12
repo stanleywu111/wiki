@@ -7,7 +7,7 @@ $$q_t = N_t^b - N_t^a $$
 则点过程的参数$\lambda$为：
 $$\lambda^b(\delta^b) = A e^{-k \delta^b}$$
 $$\lambda^a(\delta^a) = A e^{-k \delta^a}$$
-令供应商现金为$X$，则
+令做市商现金为$X$，则
 $$dX_t = (S_t + \delta_t^a)dN_t^a - (S_t-\delta_t^b)dN_t^b$$
 令做市商满足CARA效用函数，则做市商优化问题为：
 $$\sup E[-\exp(-\gamma(X_T+q_TS_T))]$$
