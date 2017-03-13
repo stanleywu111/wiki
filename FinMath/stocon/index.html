@@ -309,6 +309,12 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        随机控制
+      </label>
     
     <a href="./" title="随机控制" class="md-nav__link md-nav__link--active">
       随机控制
@@ -318,6 +324,41 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="随机微分方程的强解性质" class="md-nav__link">
+    随机微分方程的强解性质
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-programming-principle" title="动态规划原则（Dynamic Programming Principle）" class="md-nav__link">
+    动态规划原则（Dynamic Programming Principle）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hamilton-jacobi-bellman" title="Hamilton-Jacobi-Bellman方程" class="md-nav__link">
+    Hamilton-Jacobi-Bellman方程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hjb" title="HJB方程粘性解" class="md-nav__link">
+    HJB方程粘性解
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
     
@@ -595,6 +636,41 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="随机微分方程的强解性质" class="md-nav__link">
+    随机微分方程的强解性质
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-programming-principle" title="动态规划原则（Dynamic Programming Principle）" class="md-nav__link">
+    动态规划原则（Dynamic Programming Principle）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hamilton-jacobi-bellman" title="Hamilton-Jacobi-Bellman方程" class="md-nav__link">
+    Hamilton-Jacobi-Bellman方程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hjb" title="HJB方程粘性解" class="md-nav__link">
+    HJB方程粘性解
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -607,9 +683,37 @@
                
               
                 
-                  <h1>随机控制</h1>
-                
-                
+                <h1 id="pde">PDE方法求解动态规划问题</h1>
+<h2 id="_1">随机微分方程的强解性质</h2>
+<p>一个偏微分方程就是各阶偏导数满足的一个关系式，古典解就是函数本身的偏导数都存在并且满足那个关系式，
+强解是函数的弱导数存在并且几乎处处满足那个关系式，用弱导数代替导数来验证那个关系式。<br />
+对于随机微分方程：
+<script type="math/tex; mode=display">dX_t=b(t,X_t)dt+\sigma(t,X_t)dW_t</script>
+其强解<script type="math/tex">X=(X^1,\cdots,X^n)</script>满足
+<script type="math/tex; mode=display">\int^s_t|b(u,X_u)|du+\int^s_t|b(\sigma,X_u)|du < \infty</script>
+和
+<script type="math/tex; mode=display">X_s = X_t + \int^s_tb(u,X_u)du+\int^s_tb(\sigma,X_u)du</script>
+</p>
+<h2 id="dynamic-programming-principle">动态规划原则（Dynamic Programming Principle）</h2>
+<p>有限区间：
+<script type="math/tex; mode=display">
+\begin{aligned}
+ v(t,x)&= \sup_{\alpha \in A(t,x)} \sup_{\theta \in \tau_{t,T}}E[\int_t^\theta f(s,X_s^{t,x},\alpha_s)+v(\theta, X_\theta^{t,x})]\\ 
+ &= \sup_{\alpha \in A(t,x)} \inf_{\theta \in \tau_{t,T}}E[\int_t^\theta f(s,X_s^{t,x},\alpha_s)+v(\theta, X_\theta^{t,x})]
+\end{aligned}
+</script>
+无限区间：
+<script type="math/tex; mode=display">
+\begin{aligned}
+ v(x)&=\sup_{\alpha \in A(x)} \sup_{\theta \in \tau} E[\int_0 ^\theta e^{-\beta s}f(X_s^x,\alpha_s)ds+e^{-\beta \theta}v(X_\theta^x)] \\ 
+ &= \sup_{\alpha \in A(x)} \inf_{\theta \in \tau} E[\int_0 ^\theta e^{-\beta s}f(X_s^x,\alpha_s)ds+e^{-\beta \theta}v(X_\theta^x)]
+\end{aligned}
+</script>
+</p>
+<h2 id="hamilton-jacobi-bellman">Hamilton-Jacobi-Bellman方程</h2>
+<h2 id="hjb">HJB方程粘性解</h2>
+<p>一个最优控制问题的值函数如果光滑，可以验证它是相应HJB方程的解。问题是一般只能得到值函数是连续的，所以后来发展了粘性解的概念。可以证明，在一定条件下，
+值函数是HJB方程的唯一粘性解，这样就用一个PDE刻画了值函数。</p>
               
             </article>
           </div>

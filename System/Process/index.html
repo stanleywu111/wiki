@@ -547,6 +547,10 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        进程
+      </label>
+    
     <a href="./" title="进程" class="md-nav__link md-nav__link--active">
       进程
     </a>
@@ -555,6 +559,45 @@
 <nav class="md-nav md-nav--secondary">
   
   
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="进程环境" class="md-nav__link">
+    进程环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="进程控制" class="md-nav__link">
+    进程控制
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="进程调度" class="md-nav__link">
+    进程调度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="进程标识" class="md-nav__link">
+    进程标识
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
     
@@ -592,6 +635,45 @@
   
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="进程环境" class="md-nav__link">
+    进程环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="进程控制" class="md-nav__link">
+    进程控制
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="进程调度" class="md-nav__link">
+    进程调度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="进程标识" class="md-nav__link">
+    进程标识
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -605,10 +687,102 @@
                 
                   <h1>进程</h1>
                 
-                <p>程序(program)是存放在磁盘文件中的可执行文件。程序的执行实例被称为进程(process)。
-进程具有独立的权限与职责。如果系统中某个进程崩溃，它不会影响到其余的进程。
-每个进程运行在其各自的虚拟地址空间中，进程之间可以通过由内核控制的机制相互通讯。
-每个linux进程都一定有一个唯一的数字标识符，称为进程ID(process ID)，进程ID总是一非负整数。</p>
+                <h2 id="_1">进程环境</h2>
+<p>进程</p>
+<ul>
+<li>程序的执行实例被称为进程(process)</li>
+<li>进程具有独立的权限与职责。如果系统中某个进程崩溃，它不会影响到其余的进程。</li>
+<li>每个进程运行在其各自的虚拟地址空间中，进程之间可以通过由内核控制的机制相互通讯。  </li>
+</ul>
+<p>进程ID：每个linux进程都一定有一个唯一的数字。</p>
+<p>启动例程</p>
+<ul>
+<li>在进程的main函数执行之前内核会启动</li>
+<li>编译器在编译时会将启动例程编译进可执行文件中</li>
+</ul>
+<p>启动例程作用</p>
+<ul>
+<li>搜集命令行的参数传递给main函数中的argc和argv</li>
+<li>搜集环境信息构建环境表并传递给main函数</li>
+<li>登记进程的终止函数</li>
+</ul>
+<p>进程终止</p>
+<ul>
+<li>正常终止<ul>
+<li>从main函数返回</li>
+<li>调用exit(标准c库函数)</li>
+<li>调用_exit或_Exit(系统调用)</li>
+<li>最后一个线程从其启动例程返回</li>
+<li>最后一个线程调用pthread_exit</li>
+</ul>
+</li>
+<li>异常终止<ul>
+<li>调用abort</li>
+<li>接受到一个信号并终止</li>
+<li>最后一个线程对取消请求做处理响应</li>
+</ul>
+</li>
+</ul>
+<h2 id="_2">进程控制</h2>
+<p>查看进程命令</p>
+<pre><code>ps
+</code></pre>
+
+<p>查看进程详细参数命令</p>
+<pre><code>ps -aux
+</code></pre>
+
+<ul>
+<li>USER 进程的宿主</li>
+<li>PID 进程的ID</li>
+<li>PPID 父进程</li>
+<li>%CPU 进程占用的CPU百分比</li>
+<li>%MEM 进程占用内存的百分比</li>
+<li>NI 进程的NICE值，数值大，表示较少占用CPU的时间</li>
+<li>VSZ 进程虚拟大小</li>
+<li>RSS 驻留中页的数量</li>
+<li>TTY 终端ID</li>
+<li>WCHAN 正在等待的进程资源</li>
+<li>START 启动进程的时间</li>
+<li>TIME 进程消耗CPU的时间</li>
+<li>COMMAND 命令的名称和参数</li>
+</ul>
+<p>进程的常见状态</p>
+<ul>
+<li>运行状态</li>
+<li>等待状态</li>
+<li>停止状态</li>
+<li>僵尸状态</li>
+</ul>
+<h3 id="_3">进程调度</h3>
+<ol>
+<li>处理内核中的工作</li>
+<li>处理当前进程</li>
+<li>选择进程<ol>
+<li>实施进程</li>
+<li>普通进程</li>
+</ol>
+</li>
+<li>进程交互</li>
+</ol>
+<p>启动进程后，在内核中创建task_struct结构体：</p>
+<ul>
+<li>策略<ul>
+<li>轮流策略</li>
+<li>先进先出策略</li>
+</ul>
+</li>
+<li>优先权<ul>
+<li>Jiffies变量</li>
+</ul>
+</li>
+<li>实时优先权<ul>
+<li>实时进程之间</li>
+</ul>
+</li>
+<li>计数器</li>
+</ul>
+<h3 id="_4">进程标识</h3>
               
             </article>
           </div>
