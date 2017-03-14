@@ -613,24 +613,20 @@
                
               
                 
-                <h1 id="_1">风险中性度量</h1>
-<p>定义在空间<script type="math/tex">\Omega</script>上的概率测度<script type="math/tex">Q</script>称为风险中性概率测度，如果其满足：</p>
-<ol>
-<li>对于所有的<script type="math/tex">w \in \Omega</script>，<script type="math/tex">Q(w) > 0</script>
-</li>
-<li>
-<script type="math/tex">E_Q[\Delta S_m^\ast]=0, m=1,\cdots,M</script>
-</li>
-</ol>
-<p>为什么使用风险中性度量？在无套利的金融市场中，投资者使用风险中性去度量资产价格，
-这样投资者获得的资产收益就和资产的概率（风险中性概率）没有关系。因此，在风险
-中性测度<script type="math/tex">Q</script>下，不存在套利机会。</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 使用超平面分离定理证明在风险中性测度<script type="math/tex">Q</script>下，不存在套利机会。</li>
+                <h1 id="blacks-scholes-merton">Blacks-Scholes-Merton公式</h1>
+<p>假设：</p>
+<ul>
+<li>交易是在连续时间发生的</li>
+<li>无风险利率<script type="math/tex">r</script>为常数且已知</li>
+<li>标的资产没有分红和股利</li>
+<li>没有交易费用和税费</li>
+<li>标的资产可以完美的切割</li>
+<li>做空没有限制</li>
+<li>市场上没有无风险套利的机会</li>
 </ul>
-<p>
-<script type="math/tex; mode=display">S_m(0) = S_m^\ast(0) = \sum_{k=1}^K Q(w_k) S_m^\ast(1;w_k)</script>
-因此风险资产的价格等于资产在未来风险中性测度下的贴现收益。</p>
+<p>标的资产符合几何布朗运动：
+<script type="math/tex; mode=display">\frac{dS_t}{S_t} = \mu dt + \sigma dZ_t</script>
+</p>
               
             </article>
           </div>
