@@ -23,8 +23,9 @@ pages:
         - '统计套利': Algo/StatArb.md
         - '算法交易': Algo/Algo.md
     - '编程语言':
+        - '设计模式': 'ProgLag/designpatterns.md'
         - 'C++':
-            - 'C++': 'ProgLag/CPP.md'
+            - 'C++': 'ProgLag/CPP/CPP.md'
         - 'Python':
             - 'Python': 'ProgLag/Python.md'
         - 'C#': 
