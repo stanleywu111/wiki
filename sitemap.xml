@@ -68,6 +68,12 @@
     
         
     <url>
+     <loc>/ProgLag/designpatterns/</loc>
+     <lastmod>2017-03-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc></loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
