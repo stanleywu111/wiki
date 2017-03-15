@@ -37,11 +37,16 @@ pages:
 
     - '关于': about.md
 
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/stanleywu111'
+  disqus: 'mywiki-1'
+    
 extra_javascript: 
     - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 markdown_extensions:
-    - extra
     - pymdownx.tasklist:
         custom_checkbox: true
     - mdx_math:
