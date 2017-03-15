@@ -16,6 +16,12 @@ pages:
             - '线性优化': FinMath/linopt.md
             - '凸优化': FinMath/cvxopt.md
             - '随机控制': FinMath/stocon.md
+    - '交易策略':
+        - '订单簿': Algo/LOB.md
+        - '做市': Algo/MM.md
+        - '因子模型': Algo/FactorModel.md
+        - '统计套利': Algo/StatArb.md
+        - '算法交易': Algo/Algo.md
     - '编程语言':
         - '设计模式': 'ProgLag/designpatterns.md'
         - 'C++':
