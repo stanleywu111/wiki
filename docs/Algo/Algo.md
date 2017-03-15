@@ -1,1 +1,0 @@
-# Almgren-Chriss Model
