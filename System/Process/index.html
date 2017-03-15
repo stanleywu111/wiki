@@ -35,6 +35,8 @@
       <link rel="stylesheet" href="../../assets/stylesheets/application-f3ab63f78a.css">
       
       
+        <link rel="stylesheet" href="../../FinMath/mermaid.css">
+      
     
     
   </head>
@@ -597,9 +599,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="进程标识" class="md-nav__link">
-    进程标识
+  <a href="#_4" title="进程创建" class="md-nav__link">
+    进程创建
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="子进程继承" class="md-nav__link">
+    子进程继承
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -672,9 +687,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="进程标识" class="md-nav__link">
-    进程标识
+  <a href="#_4" title="进程创建" class="md-nav__link">
+    进程创建
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="子进程继承" class="md-nav__link">
+    子进程继承
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -736,12 +764,14 @@
 </ul>
 <h2 id="_2">进程控制</h2>
 <p>查看进程命令</p>
-<pre><code>ps
-</code></pre>
+<div class="codehilite"><pre><span></span>ps
+</pre></div>
+
 
 <p>查看进程详细参数命令</p>
-<pre><code>ps -aux
-</code></pre>
+<div class="codehilite"><pre><span></span>ps -aux
+</pre></div>
+
 
 <ul>
 <li>USER 进程的宿主</li>
@@ -793,7 +823,17 @@
 </li>
 <li>计数器</li>
 </ul>
-<h3 id="_4">进程标识</h3>
+<h3 id="_4">进程创建</h3>
+<p>父进程使用fork函数创建子进程</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+
+<span class="kt">pid_t</span> <span class="nf">fork</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="kt">pid_t</span> <span class="nf">vfork</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</pre></div>
+
+
+<p>fork创建的新进程被称为子进程，该函数被调用一次，但是返回两次。两次返回的的区别是：在子进程中的返回值是0，而在父进程中的返回值是新子进程的ID。创建子进程，父进程哪个先运行根据系统调度且复制父进程的内存空间。vfork也可以创建子进程，但是子进程先运行且不复制父进程的内存空间。</p>
+<h4 id="_5">子进程继承</h4>
               
             </article>
           </div>
