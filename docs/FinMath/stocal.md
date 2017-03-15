@@ -1,3 +1,23 @@
+## 勒贝格积分
+### 测度
+代数：
+
+1. $\varnothing ,\Omega \in F$
+2. if $A \in F$, then $X \setminus A \in F$
+3. if $A,B \in F$, then $A \cup B \in F$
+
+$\sigma$代数：
+
+1. $\varnothing ,\Omega \in F$
+2. if $A \in F$, then $X \setminus A \in F$
+3. if $A,B \in F$, then $A \cup B \in F$
+
+
+### Radon-Nikodym定理
+
+
+### Girsanov定理
+
 ## 随机过程
 ### Filtration
 考虑定义在测度空间$\Omega$上的$\sigma$代数$F$，如果对于$s \leq t$，存在$F_s \subset F_t \subset F$，则$F_t$称为filtration
@@ -10,7 +30,4 @@
     $$Var[B(t_{i+1})-B(t_i)]=t_{i+1}-t_i$$
 * $B(t)$是一个连续过程
 
-## Radon-Nikodym定理
 
-
-## Girsanov定理

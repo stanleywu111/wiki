@@ -46,3 +46,4 @@ markdown_extensions:
         custom_checkbox: true
     - mdx_math:
         enable_dollar_delimiter: True
+    - codehilite
