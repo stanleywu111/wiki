@@ -9,3 +9,8 @@
     $$E[B(t_{i+1})-B(t_i)]=0$$
     $$Var[B(t_{i+1})-B(t_i)]=t_{i+1}-t_i$$
 * $B(t)$是一个连续过程
+
+## Radon-Nikodym定理
+
+
+## Girsanov定理

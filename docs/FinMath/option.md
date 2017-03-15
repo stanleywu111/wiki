@@ -1,3 +1,5 @@
+![relation](../img/relation.PNG)
+
 # Blacks-Scholes-Merton公式
 假设：
 
