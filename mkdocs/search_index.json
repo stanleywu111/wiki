@@ -171,46 +171,6 @@
             "title": "HJB\u65b9\u7a0b\u7c98\u6027\u89e3"
         },
         {
-            "location": "/Algo/LOB/",
-            "text": "\u70b9\u8fc7\u7a0b",
-            "title": "\u8ba2\u5355\u7c3f"
-        },
-        {
-            "location": "/Algo/LOB/#_1",
-            "text": "",
-            "title": "\u70b9\u8fc7\u7a0b"
-        },
-        {
-            "location": "/Algo/MM/",
-            "text": "Dealing with the Inventory Risk\n\n\n\u5047\u8bbe\u8ba2\u5355\u5230\u8fbe\u7b26\u5408\u6cca\u677e\u70b9\u8fc7\u7a0b\uff0cbid\u548cask\u4e24\u8fb9\u5206\u522b\u4e3a\nN_b\n\u548c\nN_a\n\uff0c\n\u5219\u505a\u5e02\u5546\u7684\u7684\u5b58\u8d27\u4e3a\n\nq_t = N_t^b - N_t^a \n\n\u505a\u5e02\u5546\u62a5\u4ef7\u4e3a\nS_t^b\n\u548c\nS_t^a\n\uff0c\u56e0\u4e3a\u8ba2\u5355\u7c3f\u7684\u5230\u8fbe\u8fc7\u7a0b\u548c\u8ddd\u79bb\u4e2d\u95f4\u4ef7\u7684\n\u8ddd\u79bb\u6709\u5173\uff0c\u5373\n\\delta_t^b = S_t - S_t^b\n\uff0c\n\\delta_t^a = S_t^a - S_t\n\u3002\n\u5219\u70b9\u8fc7\u7a0b\u7684\u53c2\u6570\n\\lambda\n\u4e3a\uff1a\n\n\\lambda^b(\\delta^b) = A e^{-k \\delta^b}\n\n\n\\lambda^a(\\delta^a) = A e^{-k \\delta^a}\n\n\u4ee4\u505a\u5e02\u5546\u73b0\u91d1\u4e3a\nX\n\uff0c\u5219\n\ndX_t = (S_t + \\delta_t^a)dN_t^a - (S_t-\\delta_t^b)dN_t^b\n\n\u4ee4\u505a\u5e02\u5546\u6ee1\u8db3CARA\u6548\u7528\u51fd\u6570\uff0c\u5219\u505a\u5e02\u5546\u4f18\u5316\u95ee\u9898\u4e3a\uff1a\n\n\\sup E[-\\exp(-\\gamma(X_T+q_TS_T))]",
-            "title": "\u505a\u5e02"
-        },
-        {
-            "location": "/Algo/MM/#dealing-with-the-inventory-risk",
-            "text": "\u5047\u8bbe\u8ba2\u5355\u5230\u8fbe\u7b26\u5408\u6cca\u677e\u70b9\u8fc7\u7a0b\uff0cbid\u548cask\u4e24\u8fb9\u5206\u522b\u4e3a N_b \u548c N_a \uff0c\n\u5219\u505a\u5e02\u5546\u7684\u7684\u5b58\u8d27\u4e3a q_t = N_t^b - N_t^a  \n\u505a\u5e02\u5546\u62a5\u4ef7\u4e3a S_t^b \u548c S_t^a \uff0c\u56e0\u4e3a\u8ba2\u5355\u7c3f\u7684\u5230\u8fbe\u8fc7\u7a0b\u548c\u8ddd\u79bb\u4e2d\u95f4\u4ef7\u7684\n\u8ddd\u79bb\u6709\u5173\uff0c\u5373 \\delta_t^b = S_t - S_t^b \uff0c \\delta_t^a = S_t^a - S_t \u3002\n\u5219\u70b9\u8fc7\u7a0b\u7684\u53c2\u6570 \\lambda \u4e3a\uff1a \\lambda^b(\\delta^b) = A e^{-k \\delta^b}  \\lambda^a(\\delta^a) = A e^{-k \\delta^a} \n\u4ee4\u505a\u5e02\u5546\u73b0\u91d1\u4e3a X \uff0c\u5219 dX_t = (S_t + \\delta_t^a)dN_t^a - (S_t-\\delta_t^b)dN_t^b \n\u4ee4\u505a\u5e02\u5546\u6ee1\u8db3CARA\u6548\u7528\u51fd\u6570\uff0c\u5219\u505a\u5e02\u5546\u4f18\u5316\u95ee\u9898\u4e3a\uff1a \\sup E[-\\exp(-\\gamma(X_T+q_TS_T))]",
-            "title": "Dealing with the Inventory Risk"
-        },
-        {
-            "location": "/Algo/FactorModel/",
-            "text": "\u56e0\u5b50\u6a21\u578b",
-            "title": "\u56e0\u5b50\u6a21\u578b"
-        },
-        {
-            "location": "/Algo/StatArb/",
-            "text": "\u7edf\u8ba1\u5957\u5229",
-            "title": "\u7edf\u8ba1\u5957\u5229"
-        },
-        {
-            "location": "/Algo/Algo/",
-            "text": "Almgren-Chriss Model",
-            "title": "\u7b97\u6cd5\u4ea4\u6613"
-        },
-        {
-            "location": "/Algo/Algo/#almgren-chriss-model",
-            "text": "",
-            "title": "Almgren-Chriss Model"
-        },
-        {
             "location": "/ProgLag/designpatterns/",
             "text": "\u524d\u7f6e\u77e5\u8bc6\n\n\nSOLID\u8bbe\u8ba1\u539f\u5219\n\n\n\n\nSingle Responsibility Principle (SRP)\n\n\nOpen-Closed Principle (OCP)\n\n\nLiskov Substitution Principle (LSP)\n\n\nInterface Segregation Principle (ISP)\n\n\nDependency Inversion Principle (DIP)",
             "title": "\u8bbe\u8ba1\u6a21\u5f0f"
