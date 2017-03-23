@@ -21,6 +21,51 @@ Threads share momeory space, processes(mostly) don`t. Thread has smaller state, 
 
 ### Threads in C++
 
+```cpp
+#include <iostream>
+#include <thread>  //①
+void hello()  //②
+{
+  std::cout << "Hello Concurrent World\n";
+}
+int main()
+{
+  std::thread t(hello);  //③
+  t.join();  //④
+}
+```
+
+#### 线程管理
+##### 启动线程
+* 调用callable
+```cpp
+class background_task
+{
+public:
+  void operator()() const
+  {
+    do_something();
+    do_something_else();
+  }
+};
+
+background_task f;
+std::thread my_thread(f);
+```
+* 传入函数对象
+```cpp
+std::thread my_thread((background_task()));  // 1
+std::thread my_thread{background_task()};    // 2
+```
+
+* 使用lambda
+```cpp
+std::thread my_thread([]{
+  do_something();
+  do_something_else();
+});
+```
+
 ## Data Race
 
 ## 线程和内存
